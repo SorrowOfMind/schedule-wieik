@@ -1,14 +1,35 @@
-export interface ClassInterface {
+interface ClassInterface {
   title: string;
-  type: string;
-  group: string | null;
   lecturer: string;
   room: string;
   start: string;
   end: string;
+  type: ClassType;
+  group: Group;
 }
 
-export interface DayClassesInterface {
+interface DayClassesInterface {
   date: string;
   classes: ClassInterface[];
 }
+
+enum ClassType {
+  Lecture = 'w',
+  Laboratory = 'l',
+  CompLaboratory = 'lk',
+  Project = 'p',
+}
+
+type Group =
+  | 'p1'
+  | 'p2'
+  | 'p3'
+  | 'lk1'
+  | 'lk2'
+  | 'lk3'
+  | 'l1'
+  | 'l2'
+  | 'l3'
+  | 'l4';
+
+export type { ClassInterface, DayClassesInterface };

@@ -3,6 +3,17 @@ export default {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      colors: {
+        standardGrey: '#c5c4c4',
+        darkGrey: '#6b6a6c',
+        compLab: '#73d31a',
+        lab: '#ffb63e',
+        lecture: '#47addf',
+        project: '#a454e9',
+      },
+      backgroundImage: {
+        dayBlockBg: "url('/src/assets/pattern.png')",
+      },
       gridTemplateColumns: {
         14: 'repeat(14, minmax(0, 1fr))',
       },

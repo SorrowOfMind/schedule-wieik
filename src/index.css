@@ -8,12 +8,16 @@ html, body {
     margin: 0;
     box-sizing: border-box;
     background-color: #f6f6f6;
-    color: #525252;
+    color: #6b6a6c;
 }
 
 @layer components {
     .container {
-        @apply mx-auto max-w-[1800px];
+        @apply mx-auto max-w-[1850px];
         padding: 0 1rem;
+    }
+
+    .tag {
+        @apply px-2 py-1 rounded-lg w-max;
     }
   }
