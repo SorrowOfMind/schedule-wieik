@@ -54,6 +54,12 @@ const FULL_TYPE = {
   p: 'PROJEKT',
 };
 
+const GROUPS_OPTIONS = [
+  { name: 'Projekt', options: ['P1', 'P2', 'P3'] },
+  { name: 'Laboratoria', options: ['L1', 'L2', 'L3', 'L4'] },
+  { name: 'Lab. komp.', options: ['Lk1', 'LK2', 'LK2'] },
+] as const;
+
 export {
   HOURS2,
   DATE_SEPARATOR,
@@ -62,4 +68,5 @@ export {
   DATE_MONTH_IDX,
   DATE_YEAR_IDX,
   FULL_TYPE,
+  GROUPS_OPTIONS,
 };

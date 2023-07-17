@@ -20,4 +20,32 @@ html, body {
     .tag {
         @apply px-2 py-1 rounded-lg w-max;
     }
+
+    .selectContainer {
+        @apply relative bg-white w-80 border border-standardGrey p-0.5 gap-0.5 h-14 min-h-max flex;
+    }
+
+    .selectMenu {
+        @apply absolute m-0 border border-standardGrey w-full bg-white list-none overflow-y-auto max-h-80 left-0 z-10 text-2xl;
+        scrollbar-width: none;
+        top: calc(100% + .25em);
+        display: none;
+    }
+    .selectMenu::-webkit-scrollbar {
+        display: none;
+    }
+
+    .selectMenu.open {
+        display: block;
+    } 
+
+    .clearBtn {
+        @apply bg-none border-none cursor-pointer p-0 outline-none text-4xl
+    }
+
+    .caret {
+        border: .5em solid transparent;
+        @apply border-t-darkGrey;
+        translate: 0 50%;
+    }
   }
