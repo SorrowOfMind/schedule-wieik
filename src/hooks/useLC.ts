@@ -18,7 +18,7 @@ const useLC = <T>(key: string, initialValue: T | (() => T)) => {
     localStorage.setItem(key, JSON.stringify(value));
   }, [key, value]);
 
-  return [value, setValue];
+  return [value, setValue] as [typeof value, typeof setValue];
 };
 
 export default useLC;

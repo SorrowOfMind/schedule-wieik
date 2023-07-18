@@ -1,16 +1,41 @@
 import { useState } from 'react';
 import { GROUPS_OPTIONS } from '../../constants';
 
-const Select = () => {
+interface SelectProps {
+  setSelectedOptions: React.Dispatch<React.SetStateAction<string[]>>;
+  selectedOptions: string[];
+}
+
+const Select = ({ setSelectedOptions, selectedOptions }: SelectProps) => {
   const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
 
   const toggleMenu = () => {
     setMenuOpen((prevState) => !prevState);
   };
 
+  const handleSelectedOptions = (option: string) => {
+    if (selectedOptions.includes(option)) {
+      setSelectedOptions(
+        selectedOptions.filter((selectOption) => selectOption !== option)
+      );
+    } else {
+      setSelectedOptions([...selectedOptions, option]);
+    }
+  };
+
   return (
-    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
-    <div className="selectContainer" onClick={toggleMenu}>
+    <div
+      className="selectContainer"
+      onClick={toggleMenu}
+      onBlur={() => setMenuOpen(false)}
+    >
+      <span className="tagsContainer">
+        {selectedOptions.map((option) => (
+          <span key={option} className="selectTag">
+            {option}
+          </span>
+        ))}
+      </span>
       <button type="button" className="clearBtn">
         &times;
       </button>
@@ -22,7 +47,11 @@ const Select = () => {
             <p className="p-3">{group.name}</p>
             <ul className="font-normal">
               {group.options.map((option) => (
-                <li key={option} className="p-3 pl-5 hover:bg-standardGrey">
+                <li
+                  key={option}
+                  className="p-3 pl-5 hover:bg-standardGrey"
+                  onClick={() => handleSelectedOptions(option)}
+                >
                   {option}
                 </li>
               ))}

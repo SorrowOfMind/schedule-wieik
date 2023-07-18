@@ -22,7 +22,17 @@ html, body {
     }
 
     .selectContainer {
-        @apply relative bg-white w-80 border border-standardGrey p-0.5 gap-0.5 h-14 min-h-max flex;
+        @apply relative bg-white w-80 border border-standardGrey flex;
+        align-items: center;
+        min-height: 1.5em;
+        align-items: center;
+        gap: .5em;
+        padding: .5em;
+        border-radius: .25em;
+        outline: none;
+    }
+    .selectContainer:focus {
+        border-color: red;
     }
 
     .selectMenu {
@@ -47,5 +57,23 @@ html, body {
         border: .5em solid transparent;
         @apply border-t-darkGrey;
         translate: 0 50%;
+    }
+
+    .tagsContainer {
+        flex-grow: 1;
+        display: flex;
+        gap: .5em;
+        flex-wrap: wrap;
+    }
+
+    .selectTag {
+        display: flex;
+        align-items: center;
+        border: .05em solid #777;
+        border-radius: .25em;
+        padding: .15em;
+        gap: .25em;
+        background: none;
+        outline: none;
     }
   }
