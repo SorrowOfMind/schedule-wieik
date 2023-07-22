@@ -17,24 +17,23 @@ html, body {
         padding: 0 1rem;
     }
 
+    .topbar {
+        @apply flex py-3;
+    }
+
     .tag {
         @apply px-2 py-1 rounded-lg w-max;
     }
 
     .selectContainer {
-        @apply relative bg-white w-80 border border-standardGrey flex;
+        @apply relative bg-white w-96 border border-standardGrey flex;
         align-items: center;
-        min-height: 1.5em;
-        align-items: center;
+        min-height: 4.2em;
         gap: .5em;
         padding: .5em;
-        border-radius: .25em;
         outline: none;
     }
-    .selectContainer:focus {
-        border-color: red;
-    }
-
+ 
     .selectMenu {
         @apply absolute m-0 border border-standardGrey w-full bg-white list-none overflow-y-auto max-h-80 left-0 z-10 text-2xl;
         scrollbar-width: none;
@@ -47,16 +46,24 @@ html, body {
 
     .selectMenu.open {
         display: block;
-    } 
+    }
+    
+    .selectOption {
+        @apply p-3 pl-5 hover:bg-gray-200;
+    }
+
+    .selectOption.active {
+        @apply bg-sky-300;
+    }
 
     .clearBtn {
-        @apply bg-none border-none cursor-pointer p-0 outline-none text-4xl
+        @apply bg-none border-none cursor-pointer p-0 outline-none text-4xl flex justify-center items-center leading-none;
     }
 
     .caret {
         border: .5em solid transparent;
         @apply border-t-darkGrey;
-        translate: 0 50%;
+        translate: 0 40%;
     }
 
     .tagsContainer {
@@ -64,16 +71,20 @@ html, body {
         display: flex;
         gap: .5em;
         flex-wrap: wrap;
+
     }
 
     .selectTag {
-        display: flex;
-        align-items: center;
-        border: .05em solid #777;
-        border-radius: .25em;
-        padding: .15em;
+        @apply flex border border-standardGrey p-2 text-xl font-semibold;
         gap: .25em;
         background: none;
         outline: none;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .selectTag:hover {
+        @apply border-standardBlue;
     }
   }

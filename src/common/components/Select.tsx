@@ -1,5 +1,6 @@
-import { useState } from 'react';
-import { GROUPS_OPTIONS } from '../../constants';
+import React, { useState } from 'react';
+import SelectOptions from './SelectOptions';
+import SelectTag from './SelectTag';
 
 interface SelectProps {
   setSelectedOptions: React.Dispatch<React.SetStateAction<string[]>>;
@@ -23,42 +24,47 @@ const Select = ({ setSelectedOptions, selectedOptions }: SelectProps) => {
     }
   };
 
+  const clearOptions = (e: React.MouseEvent | React.PointerEvent) => {
+    e.stopPropagation();
+    setSelectedOptions([]);
+  };
+
+  const clearOption = (
+    e: React.MouseEvent | React.PointerEvent,
+    option: string
+  ) => {
+    e.stopPropagation();
+    setSelectedOptions(
+      selectedOptions.filter((selectOption) => selectOption !== option)
+    );
+  };
+
   return (
     <div
+      tabIndex={0}
       className="selectContainer"
       onClick={toggleMenu}
       onBlur={() => setMenuOpen(false)}
     >
       <span className="tagsContainer">
         {selectedOptions.map((option) => (
-          <span key={option} className="selectTag">
-            {option}
-          </span>
+          <SelectTag key={option} option={option} clearOption={clearOption} />
         ))}
       </span>
-      <button type="button" className="clearBtn">
+      <button
+        type="button"
+        className="clearBtn"
+        onClick={(e) => clearOptions(e)}
+      >
         &times;
       </button>
-      <div className="bg-standardGrey w-px" />
+      <div className="bg-standardGrey w-px h-10" />
       <div className="caret" />
-      <ul className={`selectMenu ${isMenuOpen ? 'open' : ''}`}>
-        {GROUPS_OPTIONS.map((group) => (
-          <li key={group.name} className="font-semibold">
-            <p className="p-3">{group.name}</p>
-            <ul className="font-normal">
-              {group.options.map((option) => (
-                <li
-                  key={option}
-                  className="p-3 pl-5 hover:bg-standardGrey"
-                  onClick={() => handleSelectedOptions(option)}
-                >
-                  {option}
-                </li>
-              ))}
-            </ul>
-          </li>
-        ))}
-      </ul>
+      <SelectOptions
+        isMenuOpen={isMenuOpen}
+        selectedOptions={selectedOptions}
+        handleSelectedOptions={handleSelectedOptions}
+      />
     </div>
   );
 };

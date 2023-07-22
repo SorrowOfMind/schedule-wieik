@@ -12,7 +12,7 @@ interface DayBlockProps {
 const DayBlock = ({ dayData }: DayBlockProps) => {
   const { date, classes } = dayData;
   return (
-    <div className="2xl:basis-1/2 basis-full p-1 flex flex-col overflow-hidden">
+    <div className="2xl:basis-1/2 basis-full flex flex-col px-2 overflow-hidden">
       <div className="text-xl font-bold p-2">
         {date} {getWeekday(date)}
       </div>

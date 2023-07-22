@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
 import FlexContainer from './common/components/FlexContainer';
 import Select from './common/components/Select';
 import DayBlock from './components/DayBlock';
@@ -14,15 +13,16 @@ function App() {
     'iwik_group_filter',
     []
   );
+  const [showLectures, setShowLectures] = useLC<boolean>('iwik_lectures', true);
 
   const filteredData =
     selectedOptions.length > 0
-      ? getFilteredData(rawData, selectedOptions)
+      ? getFilteredData(rawData, selectedOptions, showLectures)
       : rawData;
 
   return (
     <div className="container pt-2">
-      <div>
+      <div className="topbar">
         <Select
           setSelectedOptions={setSelectedOptions}
           selectedOptions={selectedOptions}

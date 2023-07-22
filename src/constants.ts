@@ -55,9 +55,9 @@ const FULL_TYPE = {
 };
 
 const GROUPS_OPTIONS = [
-  { name: 'Projekt', options: ['P1', 'P2', 'P3'] },
-  { name: 'Laboratoria', options: ['L1', 'L2', 'L3', 'L4'] },
   { name: 'Lab. komp.', options: ['LK1', 'LK2', 'LK3'] },
+  { name: 'Laboratoria', options: ['L1', 'L2', 'L3', 'L4'] },
+  { name: 'Projekt', options: ['P1', 'P2', 'P3'] },
 ] as const;
 
 export {

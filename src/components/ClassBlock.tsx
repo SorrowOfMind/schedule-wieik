@@ -18,7 +18,9 @@ const ClassBlock = ({ classData }: ClassBlockProps) => {
       } shadow p-2 md:p-3 bg-white border border-standardGrey flex flex-col justify-between`}
     >
       <div>
-        <p className="text-[#2aa7ff] font-bold text-lg md:text-xl">{title}</p>
+        <p className="text-standardBlue font-bold text-lg md:text-xl">
+          {title}
+        </p>
         <p className="text-darkGrey font-bold text-base md:text-xl">
           {lecturer}
         </p>
