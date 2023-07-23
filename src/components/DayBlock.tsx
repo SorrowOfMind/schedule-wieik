@@ -1,3 +1,4 @@
+import { format } from 'date-fns';
 import { DayClassesInterface } from '../interfaces/dayClassesInterface';
 import GridContainer from '../common/components/GridContainer';
 import GridConfig from '../common/configs/GridConfig';
@@ -12,9 +13,9 @@ interface DayBlockProps {
 const DayBlock = ({ dayData }: DayBlockProps) => {
   const { date, classes } = dayData;
   return (
-    <div className="2xl:basis-1/2 basis-full flex flex-col px-2 overflow-hidden">
+    <div className="2xl:basis-1/2 basis-full flex flex-col md:px-2 overflow-hidden">
       <div className="text-xl font-bold p-2">
-        {date} {getWeekday(date)}
+        {format(new Date(date), 'd.MM.yyy')} {getWeekday(date).toUpperCase()}
       </div>
       <div className="flex flex-row md:flex-col">
         <Timeline />

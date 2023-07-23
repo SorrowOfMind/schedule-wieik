@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import Checkbox from './common/components/Checkbox';
 import FlexContainer from './common/components/FlexContainer';
 import Select from './common/components/Select';
 import DayBlock from './components/DayBlock';
@@ -13,11 +15,11 @@ function App() {
     'iwik_group_filter',
     []
   );
-  const [showLectures, setShowLectures] = useLC<boolean>('iwik_lectures', true);
+  const [showCurrentWeekend, setShowCurrentWeekend] = useState<boolean>(false);
 
   const filteredData =
-    selectedOptions.length > 0
-      ? getFilteredData(rawData, selectedOptions, showLectures)
+    selectedOptions.length > 0 || showCurrentWeekend
+      ? getFilteredData(rawData, selectedOptions, showCurrentWeekend)
       : rawData;
 
   return (
@@ -26,6 +28,11 @@ function App() {
         <Select
           setSelectedOptions={setSelectedOptions}
           selectedOptions={selectedOptions}
+        />
+        <Checkbox
+          label="Pokaż obecny weekend"
+          isChecked={showCurrentWeekend}
+          setIsChecked={setShowCurrentWeekend}
         />
       </div>
       <FlexContainer>

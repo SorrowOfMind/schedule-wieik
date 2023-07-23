@@ -1,19 +1,31 @@
+import { isAfter, isBefore, isEqual, parseISO } from 'date-fns';
 import { DayClassesInterface } from '../interfaces/dayClassesInterface';
+import { getCurrentWeekend } from './getCurrentWeekend';
 
 export const getFilteredData = (
   data: DayClassesInterface[],
   options: string[],
-  showLectures: boolean
+  showCurrentWeekend: boolean
 ) => {
-  return data.reduce((acc, val) => {
+  let filteredData = [...data];
+  if (showCurrentWeekend) {
+    const [start, end] = getCurrentWeekend();
+    filteredData = filteredData.filter((day) => {
+      const date = parseISO(day.date);
+      return (
+        isAfter(date, start) && (isBefore(date, end) || isEqual(date, end))
+      );
+    });
+  }
+
+  if (options.length < 1) return filteredData;
+
+  return filteredData.reduce((acc, val) => {
     const newObj = {
       date: val.date,
-      classes: val.classes.filter((c) => {
-        if (showLectures) {
-          return options.includes(c.group.toUpperCase()) || c.type === 'w';
-        }
-        return options.includes(c.group.toUpperCase());
-      }),
+      classes: val.classes.filter(
+        (c) => options.includes(c.group.toUpperCase()) || c.type === 'w'
+      ),
     };
     if (newObj.classes.length > 0) {
       acc.push(newObj);

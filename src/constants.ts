@@ -4,23 +4,6 @@ const DATE_MONTH_IDX = 1;
 const DATE_YEAR_IDX = 2;
 
 const HOURS = [
-  '8:15 - 9:00',
-  '9:00 - 9:45',
-  '10:00 - 10:45',
-  '10:45 - 11:30',
-  '11:45 - 12:30',
-  '12:30 - 13:15',
-  '13:30 - 14:15',
-  '14:15 - 15:00',
-  '15:15 - 16:00',
-  '16:00 - 16:45',
-  '17:00 - 17:45',
-  '17:45 - 18:30',
-  '18:45 - 19:30',
-  '19:30 - 20:15',
-];
-
-const HOURS2 = [
   { start: '8:15', end: '9:00' },
   { start: '9:00', end: '9:45' },
   { start: '10:00', end: '10:45' },
@@ -61,7 +44,7 @@ const GROUPS_OPTIONS = [
 ] as const;
 
 export {
-  HOURS2,
+  HOURS,
   DATE_SEPARATOR,
   WEEKDAY,
   DATE_DAY_IDX,

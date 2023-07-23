@@ -18,7 +18,7 @@ html, body {
     }
 
     .topbar {
-        @apply flex py-3;
+        @apply flex py-3 gap-7 justify-start items-center flex-wrap;
     }
 
     .tag {
@@ -32,8 +32,10 @@ html, body {
         gap: .5em;
         padding: .5em;
         outline: none;
+        transition: border .1s;
+        cursor: pointer
     }
- 
+
     .selectMenu {
         @apply absolute m-0 border border-standardGrey w-full bg-white list-none overflow-y-auto max-h-80 left-0 z-10 text-2xl;
         scrollbar-width: none;
@@ -85,6 +87,39 @@ html, body {
     }
 
     .selectTag:hover {
+        @apply border-red-400;
+    }
+
+    .checked {
+        @apply  relative border border-standardGrey bg-white;
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        transition: all 0.1s;
+    }
+
+    .checked:before {
+        @apply bg-standardBlue;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        content: "";
+        width: 60%;
+        height: 60%;
+        opacity: 0;
+        transition: opacity 0.1s;
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+      }
+
+    .checked.active {
         @apply border-standardBlue;
+    }
+
+    .checked.active:before {
+        opacity: 1;
     }
   }
