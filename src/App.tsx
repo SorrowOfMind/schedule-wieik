@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Checkbox from './common/components/Checkbox';
 import FlexContainer from './common/components/FlexContainer';
 import Select from './common/components/Select';
@@ -16,11 +16,27 @@ function App() {
     []
   );
   const [showCurrentWeekend, setShowCurrentWeekend] = useState<boolean>(false);
+  const [isVisible, setIsVisible] = useState<boolean>(true);
 
   const filteredData =
-    selectedOptions.length > 0 || showCurrentWeekend
+    (selectedOptions.length > 0 || showCurrentWeekend) && isVisible
       ? getFilteredData(rawData, selectedOptions, showCurrentWeekend)
       : rawData;
+
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, []);
 
   return (
     <div className="container pt-2">

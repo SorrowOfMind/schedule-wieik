@@ -1,8 +1,3 @@
-const DATE_SEPARATOR = '.';
-const DATE_DAY_IDX = 0;
-const DATE_MONTH_IDX = 1;
-const DATE_YEAR_IDX = 2;
-
 const HOURS = [
   { start: '8:15', end: '9:00' },
   { start: '9:00', end: '9:45' },
@@ -43,13 +38,4 @@ const GROUPS_OPTIONS = [
   { name: 'Projekt', options: ['P1', 'P2', 'P3'] },
 ] as const;
 
-export {
-  HOURS,
-  DATE_SEPARATOR,
-  WEEKDAY,
-  DATE_DAY_IDX,
-  DATE_MONTH_IDX,
-  DATE_YEAR_IDX,
-  FULL_TYPE,
-  GROUPS_OPTIONS,
-};
+export { HOURS, WEEKDAY, FULL_TYPE, GROUPS_OPTIONS };
