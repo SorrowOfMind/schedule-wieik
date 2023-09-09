@@ -1,9 +1,5 @@
 import { HrsEndConfig, HrsStartConfig } from '../common/configs/HrsConfig';
-import {
-  ClassTypeBg,
-  ClassTypeText,
-  ClassTypeSubject,
-} from '../common/configs/TagsConfig';
+import { ClassTypeBg, ClassTypeSubject } from '../common/configs/TagsConfig';
 import { ClassInterface } from '../interfaces/dayClassesInterface';
 
 interface ClassBlockProps {
@@ -11,17 +7,14 @@ interface ClassBlockProps {
 }
 
 const ClassBlock = ({ classData }: ClassBlockProps) => {
-  const { id, title, lecturer, room, start, end, type, group, duration } =
-    classData;
+  const { id, title, lecturer, room, start, end, type, group } = classData;
   return (
     <div
       className={`md:row-auto ${
         HrsStartConfig[start as keyof typeof HrsStartConfig]
       } ${
         HrsEndConfig[end as keyof typeof HrsEndConfig]
-      } shadow p-2 bg-white border border-standardGrey flex ${
-        duration < 3 ? 'fles-row' : 'flex-col'
-      } md:flex-col justify-between`}
+      } shadow p-2 bg-white border border-standardGrey flex flex-col justify-between`}
     >
       <div>
         <p
@@ -35,12 +28,7 @@ const ClassBlock = ({ classData }: ClassBlockProps) => {
           {lecturer}
         </p>
       </div>
-
-      <div
-        className={`flex flex-row gap-2 ${
-          duration < 3 ? 'items-end' : ''
-        } justify-end`}
-      >
+      <div className="flex flex-row gap-2 justify-end">
         <div className="border border-darkGrey w-max px-2 py-1 rounded-lg font-semibold">
           {room}
         </div>

@@ -5,13 +5,6 @@ export const ClassTypeBg = {
   p: 'bg-project',
 };
 
-export const ClassTypeText = {
-  w: 'text-lecture',
-  l: 'text-lab',
-  lk: 'text-compLab',
-  p: 'text-project',
-};
-
 export const ClassTypeSubject = {
   1: 'text-eng',
   2: 'text-java',
