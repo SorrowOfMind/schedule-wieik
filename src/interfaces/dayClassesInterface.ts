@@ -1,4 +1,5 @@
 interface ClassInterface {
+  id: number;
   title: string;
   lecturer: string;
   room: string;
@@ -6,6 +7,7 @@ interface ClassInterface {
   end: string;
   type: ClassType;
   group: Group;
+  duration: number;
 }
 
 interface DayClassesInterface {

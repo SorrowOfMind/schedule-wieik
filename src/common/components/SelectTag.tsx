@@ -10,7 +10,7 @@ const SelectTag = ({ option, clearOption }: SelectTagProps) => {
   return (
     <span
       key={option}
-      className="selectTag"
+      className="flex border border-standardGrey p-2 text-xl font-semibold cursor-pointer items-center justify-between outline-none bg-none gap-2 hover:border-red-400"
       onClick={(e) => clearOption(e, option)}
     >
       {option}

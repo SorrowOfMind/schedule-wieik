@@ -46,14 +46,14 @@ const Select = ({ setSelectedOptions, selectedOptions }: SelectProps) => {
       onClick={toggleMenu}
       onBlur={() => setMenuOpen(false)}
     >
-      <span className="tagsContainer">
+      <span className="flex flex-wrap grow gap-2">
         {selectedOptions.map((option) => (
           <SelectTag key={option} option={option} clearOption={clearOption} />
         ))}
       </span>
       <button
         type="button"
-        className="clearBtn"
+        className="bg-none border-none cursor-pointer p-0 outline-none text-4xl flex justify-center items-center leading-none"
         onClick={(e) => clearOptions(e)}
       >
         &times;

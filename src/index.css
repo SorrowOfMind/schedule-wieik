@@ -13,16 +13,11 @@ html, body {
 
 @layer components {
     .container {
-        @apply mx-auto max-w-[1850px];
-        padding: 0 1rem;
-    }
-
-    .topbar {
-        @apply flex py-3 gap-7 justify-start items-center flex-wrap;
+        @apply mx-auto max-w-[1253px];
     }
 
     .tag {
-        @apply px-2 py-1 rounded-lg w-max;
+        @apply px-3 py-1 rounded-lg w-max;
     }
 
     .selectContainer {
@@ -49,53 +44,19 @@ html, body {
     .selectMenu.open {
         display: block;
     }
-    
-    .selectOption {
-        @apply p-3 pl-5 hover:bg-gray-200;
-    }
-
-    .selectOption.active {
-        @apply bg-sky-300;
-    }
-
-    .clearBtn {
-        @apply bg-none border-none cursor-pointer p-0 outline-none text-4xl flex justify-center items-center leading-none;
-    }
-
+ 
     .caret {
         border: .5em solid transparent;
         @apply border-t-darkGrey;
         translate: 0 40%;
     }
 
-    .tagsContainer {
-        flex-grow: 1;
-        display: flex;
-        gap: .5em;
-        flex-wrap: wrap;
-
-    }
-
-    .selectTag {
-        @apply flex border border-standardGrey p-2 text-xl font-semibold;
-        gap: .25em;
-        background: none;
-        outline: none;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
-    }
-
-    .selectTag:hover {
-        @apply border-red-400;
-    }
-
     .checked {
-        @apply  relative border border-standardGrey bg-white;
+        @apply relative border border-standardGrey bg-white;
         -webkit-appearance: none;
         appearance: none;
-        width: 25px;
-        height: 25px;
+        width: 30px;
+        height: 30px;
         cursor: pointer;
         transition: all 0.1s;
     }

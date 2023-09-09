@@ -7,19 +7,22 @@ export default {
         standardGrey: '#c5c4c4',
         standardBlue: '#2aa7ff',
         darkGrey: '#6b6a6c',
-        compLab: '#73d31a',
-        lab: '#ffb63e',
+        compLab: '#5aa315',
+        lab: '#e09a26',
         lecture: '#47addf',
         project: '#a454e9',
-      },
-      backgroundImage: {
-        dayBlockBg: "url('/src/assets/pattern.png')",
+        eng: '#006d75',
+        java: '#eb2f96',
+        obj: '#fa541c',
+        db: '#237804',
+        meas: '#0958d9',
       },
       gridTemplateColumns: {
         14: 'repeat(14, minmax(0, 1fr))',
       },
       gridTemplateRows: {
         14: 'repeat(14, minmax(0, 1fr))',
+        100: 'repeat(14, minmax(min-content, 1fr))',
       },
       gridColumnStart: {
         13: '13',

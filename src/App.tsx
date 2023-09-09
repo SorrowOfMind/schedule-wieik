@@ -39,8 +39,8 @@ function App() {
   }, []);
 
   return (
-    <div className="container pt-2">
-      <div className="topbar">
+    <div className="container pt-2 px-4">
+      <div className="flex md:px-2 py-3 gap-7 justify-start items-center flex-wrap">
         <Select
           setSelectedOptions={setSelectedOptions}
           selectedOptions={selectedOptions}

@@ -8,11 +8,11 @@ const Timeline = () => {
       {HOURS.map((hrBlock, idx) => (
         <div
           key={idx}
-          className="border border-standardGrey min-w-max text-md font-bold px-2 py-3 md:p-2 bg-white flex flex-row justify-center md:justify-between md:flex-col"
+          className="border border-standardGrey text-lg font-bold p-2 md:px-2 bg-white flex flex-row md:flex-wrap justify-center md:justify-between items-center"
         >
-          <span>{hrBlock.start}</span>
-          <span className="md:hidden">&nbsp;-&nbsp;</span>
-          <span className="md:self-end">{hrBlock.end}</span>
+          <p>{hrBlock.start}</p>
+          <p>&nbsp;-&nbsp;</p>
+          <p>{hrBlock.end}</p>
         </div>
       ))}
     </GridContainer>

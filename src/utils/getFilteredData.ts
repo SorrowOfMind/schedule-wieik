@@ -7,7 +7,6 @@ export const getFilteredData = (
   options: string[],
   showCurrentWeekend: boolean
 ) => {
-  console.log('filter data');
   let filteredData = [...data];
   if (showCurrentWeekend) {
     const [start, end] = getCurrentWeekend();

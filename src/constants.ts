@@ -23,19 +23,12 @@ const WEEKDAY = [
   'Czwartek',
   'Piątek',
   'Sobota',
-];
-
-const FULL_TYPE = {
-  w: 'WYKŁAD',
-  l: 'LAB',
-  lk: 'LAB KOMP',
-  p: 'PROJEKT',
-};
+] as const;
 
 const GROUPS_OPTIONS = [
-  { name: 'Lab. komp.', options: ['LK1', 'LK2', 'LK3'] },
-  { name: 'Laboratoria', options: ['L1', 'L2', 'L3', 'L4'] },
+  { name: 'Lab. komputerowe', options: ['LK1', 'LK2', 'LK3'] },
+  { name: 'Lab. sprzętowe', options: ['L1', 'L2', 'L3', 'L4'] },
   { name: 'Projekt', options: ['P1', 'P2', 'P3'] },
 ] as const;
 
-export { HOURS, WEEKDAY, FULL_TYPE, GROUPS_OPTIONS };
+export { HOURS, WEEKDAY, GROUPS_OPTIONS };

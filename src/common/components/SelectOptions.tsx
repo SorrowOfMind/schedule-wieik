@@ -20,8 +20,8 @@ const SelectOptions = ({
             {group.options.map((option) => (
               <li
                 key={option}
-                className={`selectOption ${
-                  selectedOptions.includes(option) ? 'active' : ''
+                className={`p-3 pl-5 hover:bg-gray-200 ${
+                  selectedOptions.includes(option) ? 'bg-sky-300' : ''
                 }`}
                 onClick={() => handleSelectedOptions(option)}
               >

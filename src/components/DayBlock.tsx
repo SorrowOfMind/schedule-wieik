@@ -13,11 +13,11 @@ interface DayBlockProps {
 const DayBlock = ({ dayData }: DayBlockProps) => {
   const { date, classes } = dayData;
   return (
-    <div className="2xl:basis-1/2 basis-full flex flex-col md:px-2 overflow-hidden">
-      <div className="text-xl font-bold p-2">
+    <div className="2xl:basis-1/2 basis-full flex flex-col md:px-2 overflow-hidden w-full">
+      <div className="text-2xl font-bold py-2">
         {format(new Date(date), 'd.MM.yyy')} {getWeekday(date).toUpperCase()}
       </div>
-      <div className="flex flex-row md:flex-col">
+      <div className="flex flex-row md:flex-col border border-standardGrey">
         <Timeline />
         <GridContainer options={GridConfig.classes}>
           {classes.map((classData, idx) => (
