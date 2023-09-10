@@ -6,7 +6,7 @@ interface CheckboxProps {
 
 const Checkbox = ({ label, isChecked, setIsChecked }: CheckboxProps) => {
   return (
-    <div className="flex gap-x-2 items-center text-white">
+    <div className="flex items-center text-white mb-4 md:mb-0">
       <input
         type="checkbox"
         className={`checked ${isChecked ? 'active' : ''}`}

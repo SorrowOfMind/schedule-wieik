@@ -46,7 +46,7 @@ const Select = ({ setSelectedOptions, selectedOptions }: SelectProps) => {
       onClick={toggleMenu}
       onBlur={() => setMenuOpen(false)}
     >
-      <span className="flex flex-wrap grow gap-2">
+      <span className="flex flex-wrap grow">
         {selectedOptions.map((option) => (
           <SelectTag key={option} option={option} clearOption={clearOption} />
         ))}
@@ -58,7 +58,7 @@ const Select = ({ setSelectedOptions, selectedOptions }: SelectProps) => {
       >
         &times;
       </button>
-      <div className="bg-standardGrey w-px h-10" />
+      <div className="bg-standardGrey w-px h-10 mx-2" />
       <div className="caret" />
       <SelectOptions
         isMenuOpen={isMenuOpen}

@@ -28,8 +28,8 @@ const ClassBlock = ({ classData }: ClassBlockProps) => {
           {lecturer}
         </p>
       </div>
-      <div className="flex flex-row gap-2 justify-end">
-        <div className="border border-darkGrey w-max px-2 py-1 rounded-lg font-semibold">
+      <div className="flex flex-row justify-end">
+        <div className="border border-darkGrey w-max px-2 py-1 rounded-lg font-semibold mr-2">
           {room}
         </div>
         {group ? (

@@ -22,7 +22,7 @@ html, body {
     }
 
     .selectContainer {
-        @apply relative bg-white flex w-full md:w-96;
+        @apply relative bg-white flex w-full md:w-96 md:mr-7;
         align-items: center;
         min-height: 4.2em;
         gap: .5em;
@@ -46,17 +46,19 @@ html, body {
     .caret {
         border: .5em solid transparent;
         @apply border-t-darkGrey;
-        translate: 0 40%;
+        transform: translateY(40%);
     }
 
     .checked {
-        @apply relative bg-white;
+        @apply relative bg-white mr-2;
         -webkit-appearance: none;
         appearance: none;
         width: 30px;
         height: 30px;
         cursor: pointer;
         transition: all 0.1s;
+        border: none;
+        border-radius: none;
     }
 
     .checked:before {
