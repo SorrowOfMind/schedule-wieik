@@ -46,25 +46,24 @@ const Select = ({ setSelectedOptions, selectedOptions }: SelectProps) => {
       onClick={toggleMenu}
       onBlur={() => setMenuOpen(false)}
     >
-      <span className="flex flex-wrap grow">
+      <span className="flex flex-wrap w-5/6 md:w-4/5">
         {selectedOptions.map((option) => (
           <SelectTag key={option} option={option} clearOption={clearOption} />
         ))}
       </span>
-      <button
-        type="button"
-        className="bg-none border-none cursor-pointer p-0 outline-none text-4xl flex justify-center items-center leading-none"
-        onClick={(e) => clearOptions(e)}
-      >
-        &times;
-      </button>
-      <div className="bg-standardGrey w-px h-10 mx-2" />
-      <div className="caret" />
-      <SelectOptions
-        isMenuOpen={isMenuOpen}
-        selectedOptions={selectedOptions}
-        handleSelectedOptions={handleSelectedOptions}
-      />
+      <div className="flex flex-row justify-end w-full md:w-1/5">
+        <div
+          className="cursor-pointer bg-darkGrey hover:bg-topbar x-btn"
+          onClick={(e) => clearOptions(e)}
+        />
+        <div className="bg-standardGrey w-px h-10 mx-3" />
+        <div className="caret text-xl" />
+        <SelectOptions
+          isMenuOpen={isMenuOpen}
+          selectedOptions={selectedOptions}
+          handleSelectedOptions={handleSelectedOptions}
+        />
+      </div>
     </div>
   );
 };

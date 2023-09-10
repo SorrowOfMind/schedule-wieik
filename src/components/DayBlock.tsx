@@ -13,7 +13,7 @@ interface DayBlockProps {
 const DayBlock = ({ dayData }: DayBlockProps) => {
   const { date, classes } = dayData;
   return (
-    <div className="2xl:basis-1/2 basis-full flex flex-col md:px-2 overflow-hidden w-full">
+    <div className="2xl:basis-1/2 basis-full flex flex-col md:px-2 overflow-hidden w-full mb-10">
       <div className="text-2xl font-bold py-2">
         {format(new Date(date), 'd.MM.yyy')} {getWeekday(date).toUpperCase()}
       </div>

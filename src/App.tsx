@@ -40,7 +40,7 @@ function App() {
 
   return (
     <>
-      <div className="sticky top-0 bg-[#4b4a4a] shadow-lg mb-8">
+      <div className="sticky top-0 bg-topbar shadow-lg mb-8">
         <div className="container px-3 flex py-3 justify-start items-center flex-wrap-reverse">
           <Select
             setSelectedOptions={setSelectedOptions}

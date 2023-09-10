@@ -3,6 +3,9 @@ export default {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      width: {
+        128: '32rem',
+      },
       colors: {
         standardGrey: '#c5c4c4',
         standardBlue: '#2aa7ff',
@@ -16,6 +19,7 @@ export default {
         obj: '#fa541c',
         db: '#237804',
         meas: '#0958d9',
+        topbar: '#4b4a4a',
       },
       gridTemplateColumns: {
         14: 'repeat(14, minmax(0, 1fr))',

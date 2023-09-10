@@ -22,14 +22,13 @@ html, body {
     }
 
     .selectContainer {
-        @apply relative bg-white flex w-full md:w-96 md:mr-7;
+        @apply relative bg-white flex w-full md:w-128 md:mr-7;
         align-items: center;
         min-height: 4.2em;
-        gap: .5em;
-        padding: .5em;
+        padding: .5em 0.5em 0 .5em;
         outline: none;
         transition: border .1s;
-        cursor: pointer
+        cursor: pointer;
     }
 
     .selectMenu {
@@ -45,7 +44,7 @@ html, body {
  
     .caret {
         border: .5em solid transparent;
-        @apply border-t-darkGrey;
+        @apply border-t-darkGrey mr-1;
         transform: translateY(40%);
     }
 
@@ -58,11 +57,11 @@ html, body {
         cursor: pointer;
         transition: all 0.1s;
         border: none;
-        border-radius: none;
+        border-radius: 0;
     }
 
     .checked:before {
-        @apply bg-standardBlue;
+        @apply bg-topbar;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -82,5 +81,31 @@ html, body {
 
     .checked.active:before {
         opacity: 1;
+    }
+
+    .x-btn {
+        width: 28px;
+        height: 28px;
+        position:relative;
+        transition: background 0.2s;
+    }
+
+    .x-btn:before, .x-btn:after{
+        content:'';
+        position: absolute;
+        width:20px;
+        height:4px;
+        background-color: white;
+        top: 12px;
+        border-radius: 2px;
+    }
+
+    .x-btn:before{
+        transform:rotate(45deg);
+        left:4px;
+    }
+    .x-btn:after{
+        transform:rotate(-45deg);
+        right:4px;
     }
   }
