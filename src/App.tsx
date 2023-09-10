@@ -41,7 +41,7 @@ function App() {
   return (
     <>
       <div className="sticky top-0 bg-[#4b4a4a] shadow-lg mb-8">
-        <div className="container px-2 flex py-3 gap-7 justify-start items-center flex-wrap-reverse">
+        <div className="container px-3 flex py-3 gap-7 justify-start items-center flex-wrap-reverse">
           <Select
             setSelectedOptions={setSelectedOptions}
             selectedOptions={selectedOptions}
@@ -53,7 +53,7 @@ function App() {
           />
         </div>
       </div>
-      <div className="container px-2 md:px-0">
+      <div className="container px-3 md:px-0">
         <FlexContainer>
           {filteredData.map((dayData, idx) => (
             <DayBlock key={idx} dayData={dayData} />
