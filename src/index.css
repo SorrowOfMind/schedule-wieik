@@ -38,10 +38,7 @@ html, body {
         top: calc(100% + .25em);
         display: none;
     }
-    .selectMenu::-webkit-scrollbar {
-        display: none;
-    }
-
+  
     .selectMenu.open {
         display: block;
     }
