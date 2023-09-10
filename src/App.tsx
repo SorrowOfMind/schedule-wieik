@@ -39,24 +39,28 @@ function App() {
   }, []);
 
   return (
-    <div className="container pt-2 px-4">
-      <div className="flex md:px-2 py-3 gap-7 justify-start items-center flex-wrap">
-        <Select
-          setSelectedOptions={setSelectedOptions}
-          selectedOptions={selectedOptions}
-        />
-        <Checkbox
-          label="Pokaż obecny weekend"
-          isChecked={showCurrentWeekend}
-          setIsChecked={setShowCurrentWeekend}
-        />
+    <>
+      <div className="sticky top-0 bg-[#4b4a4a] shadow-lg">
+        <div className="container px-2 flex py-3 gap-7 justify-start items-center flex-wrap-reverse">
+          <Select
+            setSelectedOptions={setSelectedOptions}
+            selectedOptions={selectedOptions}
+          />
+          <Checkbox
+            label="Pokaż obecny weekend"
+            isChecked={showCurrentWeekend}
+            setIsChecked={setShowCurrentWeekend}
+          />
+        </div>
       </div>
-      <FlexContainer>
-        {filteredData.map((dayData, idx) => (
-          <DayBlock key={idx} dayData={dayData} />
-        ))}
-      </FlexContainer>
-    </div>
+      <div className="container px-2 md:px-0">
+        <FlexContainer>
+          {filteredData.map((dayData, idx) => (
+            <DayBlock key={idx} dayData={dayData} />
+          ))}
+        </FlexContainer>
+      </div>
+    </>
   );
 }
 

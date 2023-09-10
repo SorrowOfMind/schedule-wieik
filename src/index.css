@@ -9,6 +9,7 @@ html, body {
     box-sizing: border-box;
     background-color: #f6f6f6;
     color: #6b6a6c;
+    scroll-behavior: smooth;
 }
 
 @layer components {
@@ -21,7 +22,7 @@ html, body {
     }
 
     .selectContainer {
-        @apply relative bg-white w-96 border border-standardGrey flex;
+        @apply relative bg-white flex w-full md:w-96;
         align-items: center;
         min-height: 4.2em;
         gap: .5em;
@@ -52,7 +53,7 @@ html, body {
     }
 
     .checked {
-        @apply relative border border-standardGrey bg-white;
+        @apply relative bg-white;
         -webkit-appearance: none;
         appearance: none;
         width: 30px;
