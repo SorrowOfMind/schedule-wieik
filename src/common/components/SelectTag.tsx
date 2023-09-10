@@ -14,7 +14,7 @@ const SelectTag = ({ option, clearOption }: SelectTagProps) => {
       onClick={(e) => clearOption(e, option)}
     >
       {option}
-      <span className="text-xl">&times;</span>
+      <span className="text-xl ml-1">&times;</span>
     </span>
   );
 };
